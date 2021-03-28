@@ -1,0 +1,78 @@
+リレーショナルデータベース(RDB)をメインに扱うことと、
+セッション(クライアントのリクエストを認識する技術)を
+扱っています。
+
+また、役割分担化されたMVC(Model View Controller)式の
+ソースを扱っています。
+
+●＜ファイルパス＞
+・shopping/shoppingファイルおよび作成手順・DB設定.txt
+・shopping/Bootstrap.class.php
+・shopping/lib/PDODatabase.class.php
+・shopping/lib/Session.class.php
+・shopping/lib/Item.class.php
+・shopping/lib/Cart.class.php
+・shopping/list.php
+・templates/shopping/list.html.twig
+・shopping/detail.php
+・templates/shopping/detail.html.twig
+・shopping/cart.php
+・templates/shopping/cart.html.twig
+・templates/shopping/category_menu.html.twig
+・css/shopping.css
+・shopping.js
+・images.zip　⇒shopping/images
+・insert.txt　⇒DBに格納
+
+●＜保存場所＞
+・プログラム(PHP) ：C:\xampp\htdocs\DT\shopping
+・JavaScript ：C:\xampp\htdocs\DT\js
+・テンプレート(HTML) ：C:\xampp\htdocs\DT\templates\shopping
+・スタイルシート(CSS) ：C:\xampp\htdocs\DT\css
+
+
+●画像などが表示されないなど、表示系エラーの対処法
+
+＜原因＞
+１．表示方法を定義している関数自体がおかしい
+２．関数に入れている引数がおかしい
+
+＜対処方法＞
+１．定義している関数(select系)周りをチェックし、スペルミスや
+　　対応している括弧に間違いがないか調べる
+２．DBに接続できているのかを確認する(調べ方はboard4を参照)
+
+
+●PDODatabase.class.php：データベース関係のクラスファイル
+・データベースに接続⇒表示(取得)⇒SQL文を作成⇒データの挿入⇒データの更新
+・try catch構文：異常が発生しそうな処理を記述する。case’mysql’case’pgsql’各SQL文について記述。
+try {A} catch {B} ：Aの処理ができない場合はBの処理を行う。
+・catch以降には例外の対応を記述する
+・$dsn(データベースソースネーム)：決まった書式がある
+　PDOを利用してDBに接続する際は引数にdsnを指定する。dsnを引数にとる変数をdbh(dbcon)という。
+・DBに対する命令文を書く際は大文字で記述する慣習がある（ex、SETNAME～）
+・FETCH_ASSOCでカラム名に添え字（番号ふって）を付けて配列を返す（カラムはDBの縦欄。横欄はレコード）
+・set～ get～関数はaccessorと呼ばれる関数。クラス内のプライベート変数にアクセスするための関数
+
+●Session.class.php：セッション関係のクラスファイル
+・セッションとはwebサイトに対するアクセス数の単位。
+・セッション変数を所持することでページを移動してもデータを保持することができる。アクセスした時にIDが付与され、ブラウザが一定時間記憶する。session_idを記憶する部分がcookie。
+・セッションで変数を持ち歩くことでサイト内を自由に行き来できる。
+
+●Cart.class.php：カートに関するプログラムのクラスファイル
+・cartにデータを挿入⇒cartの情報を表示⇒cartの情報を削除⇒合計金額の表示⇒合計個数の表示
+・cart c LEFT JOIN item i ON c. item_id = i. item_id 　：cartテーブルとitemテーブルを、共通するitem_idを基に繋げる
+・PDODatabase.class内の「public function insert」は、Cart.class.phpの「public function insCartData」内の「$this->db->insert」と繋がる。
+・「public function insCartData」は、cart.php内の「$cart->insCartData」に繋がっている。
+
+●関数
+・array_merge　：一つ、または複数の配列を合体させる(マージする)
+・array_keys　：配列のキー全て、またはその一部を返す
+・array_values　：配列の全ての値を返す
+・function insCartData　：誰が何を買ったのかを挿入する
+・function getCartData　：商品情報を取得
+・function delCartData　：削除
+・function getItemAndSumPrice　：個数と合計を取得
+・SUM(i.price) AS totalPrice　：アイテムテーブルの金額を計算して合計金額を出す
+
+
