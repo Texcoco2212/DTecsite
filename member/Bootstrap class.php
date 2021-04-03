@@ -1,8 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥bootstrap.class.php
-*ファイル名 : Bootstrap.class.php (設定に関するプログラム)
-*/
+
 namespace member;
 
 require_once dirname(__FILE__) . ' . / . . /vendor/autoload.php';
@@ -17,7 +14,7 @@ class Bootstrap
 
      const DB_PASS = 'member_pass' ;
 
-     const APP_DIR = ' /Applications/MAMP/htdocs/DT/' ;
+     const APP_DIR = ' /Applications/MAMP/htdocs/ECsite2/' ;
 
      const TEMPLATE_DIR = self ::APP_DIR . 'templates/member/' ;
 
@@ -25,7 +22,7 @@ class Bootstrap
      const CACHE_DIR = false;
      //const CACHE_DIR = self :: APP_DIR . 'templates_c/member/' ;
 
-     const APP_URL = 'http://localhost/DT/'  ;
+     const APP_URL = 'http://localhost/ECsite2/'  ;
 
      const ENTRY_URL =  self :: APP_URL . 'member/' ;
 

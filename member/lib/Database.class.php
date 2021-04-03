@@ -1,9 +1,6 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥lib¥Database.class.php
-*ファイル名 : Database.class.php
-*/
-namespace member¥lib;
+
+namespace member\lib;
 
 class Database
 {
@@ -30,14 +27,14 @@ class Database
       return $tmp_con;
   
   } else {
-    printf("Connect failed : %s¥n" , mysqli_connect_error());
+    printf("Connect failed : %s\n" , mysqli_connect_error());
     //sprintf:フォーマットされた文字列を返す（変数に代入可能）。例:2桁（4桁）にしたい。
     exit();
   }
 }
 public function execute($sql)
 {
-  return mysqli_query($this ->db_con,$sql);
+  return mysqli_query($this->db_con,$sql);
 }
 public function select($sql)
 {
@@ -56,7 +53,7 @@ public function quote($int)
 public function str_quote($str)
 
 {
-  return "'" . mysqli_real_escape_string($this ->db_con, $str) . "'" ; 
+  return "'" . mysqli_real_escape_string($this ->db_con, $str) . "'"; 
 }
 public function getLastId()
 {

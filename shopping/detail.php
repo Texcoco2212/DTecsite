@@ -1,9 +1,4 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥detail.php
-*ファイル名 : detail.php(商品詳細を表示するプログラム、Controller)
-*アクセスURL : http://localhost/DT/shopping/detail.php
-*/
 
 namespace shopping;
 
@@ -18,8 +13,8 @@ $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS
 $ses = new Session($db);
 $itm = new Item($db);
 //テンプレート指定
-$loader = new\Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
-$twig = new\Twig_Environment($loader, [
+$loader = new \Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
+$twig = new \Twig_Environment($loader, [
          'cache' => Bootstrap::CACHE_DIR
 ]);
 

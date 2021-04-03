@@ -1,8 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥Bootstrap.class.php
-*ファイル名 : Bootstrap.class.php (設定に関するプログラム)
-*/
+
 namespace shopping;
 
 date_default_timezone_set('Asia/Tokyo') ;
@@ -21,7 +18,7 @@ class Bootstrap
 
      const DB_TYPE = 'mysql' ;
 
-     const APP_DIR = ' /Applications/MAMP/htdocs/DT/' ;
+     const APP_DIR = ' /Applications/MAMP/htdocs/ECsite2/' ;
 
      const TEMPLATE_DIR = self ::APP_DIR . 'templates/shopping/' ;
 
@@ -29,7 +26,7 @@ class Bootstrap
      const CACHE_DIR = false;
      //const CACHE_DIR = self :: APP_DIR . 'templates_c/shopping/' ;
 
-     const APP_URL = 'http://localhost/DT/'  ;
+     const APP_URL = 'http://localhost/ECsite2/'  ;
 
      const ENTRY_URL =  self :: APP_URL . 'shopping/' ;
 

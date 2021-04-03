@@ -1,9 +1,4 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥cart.php
-*ファイル名 : cart.php
-*アクセスURL : http://localhost/DT/shopping/cart.php
-*/
 
 namespace shopping;
 

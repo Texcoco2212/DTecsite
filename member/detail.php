@@ -1,21 +1,17 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥detail.php
-*ファイル名 : detail.php
-*アクセスURL : http://localhost/DT/member/detail.php
-*/
+
 namespace member ;
 
 require_once dirname(__FILE__). '/Bootstrap.class.php' ;
 
-use member¥Bootstrap;
-use member¥master¥initMaster;
-use member¥lib¥Database ;
-use member¥lib¥Common;
+use member\Bootstrap;
+use member\master\initMaster;
+use member\lib\Database ;
+use member\lib\Common;
 
 //テンプレート指定
-$loader = new¥Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
-$twig =  new ¥Twig_Environment($loader, array(
+$loader = new\Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
+$twig =  new \Twig_Environment($loader, array(
          'cache' => Bootstrap ::CACHE_DIR
 ));
 
@@ -61,7 +57,7 @@ $context['trafficArr'] = $initMaster->getTrafficWay();
 $context['dataArr'] = $dataArr;
 $template = $twig->loadTemplate('detail.html.twig ');
 $template->display($context);
-}else{
+} else {
     header ('Location: ' . Bootstrap::ENTRY_URL . 'list.php'); 
 
     exit();

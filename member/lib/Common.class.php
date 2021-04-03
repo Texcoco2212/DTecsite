@@ -1,9 +1,6 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥lib¥Common.php
-*ファイル名 : Common.php
-*/
-namespace member¥lib;
+
+namespace member\lib;
  
 class Common
 {
@@ -45,7 +42,7 @@ class Common
           $this->errArr['family_name'] = 'お名前（氏）を入力してください';
         }
 }
-   private function  firstNameCheck()   
+   private function  firstNameCheck()  
    {
      //エラーチェックを入れる
      if  ($this->dataArr['first_name']===' '){
@@ -53,7 +50,7 @@ class Common
      }
     }
     private function  sexCheck()   
-    {
+  {
     if  ($this->dataArr['sex']===' '){
       $this->errArr['sex'] = '性別を選択してください';
     }
@@ -72,10 +69,10 @@ class Common
   }
 
   if  (checkdate($this->dataArr['month'], $this->dataArr['day'], 
-    $this->dataArr['year'] )===false){
+    $this->dataArr['year'])===false){
       $this->errArr['year'] = '正しい日付を入力してください。' ;
     }
-    if  (strtotime($this->dataArr['year']. ' -'  .   $this->dataArr['month'] . ' -' .   $this->dataArr['day'] ) - strtotime('now') > 0 ){
+    if  (strtotime($this->dataArr['year']. ' -'  .   $this->dataArr['month'] . ' -' .   $this->dataArr['day'] ) - strtotime('now') > 0){
       $this->errArr['year'] = '正しい日付を入力してください。' ;
     }
   }
@@ -97,18 +94,18 @@ private function  addCheck()
 }
 private function  mailCheck()   
 {
-  if (preg_match('/^([a-zA-Z0-9])+([a-zA-Z0-9¥._-])*@([a-zA-Z0-9_-])+[a-zA-Z0-9¥._-]+$/ ' ,
-    $this->dataArr['email'] )=== 0 ){
+  if (preg_match('/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+[a-zA-Z0-9\._-]+$/ ' ,
+    $this->dataArr['email'])=== 0){
       $this->errArr['email'] = 'メールアドレスを正しい形式で入力してください';
     }
 }
 
 private function  telCheck()   
 {
-  if  (preg_match('/^¥d{1,6}$/',  $this->dataArr['tel1']) === 0 ||
-        preg_match('/^¥d{1,6}$/',  $this->dataArr['tel2']) === 0 ||
-        preg_match('/^¥d{1,6}$/',  $this->dataArr['tel3']) === 0 ||
-        strlen($this ->dataArr['tel1'] . $this->dataArr['tel2'] .$this->dataArr['tel3']) >= 12 ){
+  if  (preg_match('/^\d{1,6}$/',  $this->dataArr['tel1']) === 0 ||
+        preg_match('/^\d{1,6}$/',  $this->dataArr['tel2']) === 0 ||
+        preg_match('/^\d{1,6}$/',  $this->dataArr['tel3']) === 0 ||
+        strlen($this ->dataArr['tel1'] . $this->dataArr['tel2'] .$this->dataArr['tel3']) >= 12){
           $this->errArr['tel1'] = '電話番号は、半角数字で11桁以内で入力してください';
         }
       }

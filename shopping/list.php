@@ -1,9 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥list.php
-*ファイル名 : list.php(商品一覧を表示するプログラム、Controller)
-*アクセスURL : http://localhost/DT/shopping/list.php
-*/
+
 namespace shopping;
 
 require_once dirname(__FILE__) . '/Bootstrap.class.php';
@@ -20,7 +16,7 @@ $ses = new Session($db);
 $itm = new Item($db);
 
 //テンプレート指定
-$loader = new\Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
+$loader = new \Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
 $twig = new \Twig_Environment($loader, [
          'cache' => Bootstrap::CACHE_DIR
 ]);

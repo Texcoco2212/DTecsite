@@ -1,8 +1,4 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥master¥initMaster.class.php
-*ファイル名 : initMaster.class.php
-*/
 
 namespace member¥master;
 

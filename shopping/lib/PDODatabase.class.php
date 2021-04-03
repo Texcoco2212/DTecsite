@@ -1,9 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥lib¥PDODatabase.class.php
-*ファイル名 : PDODatabase.class.php
-*おすすめ記事 : http://qiita.com/7968/items/6f089fec8dde676abb5b
-*/
+
 namespace shopping\lib;
 
 class PDODatabase

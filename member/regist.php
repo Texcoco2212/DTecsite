@@ -1,20 +1,15 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥regist.php
-*ファイル名 : regist.php
-*アクセスURL : http://localhost/DT/member/regist.php
-*/
 
 namespace member;
 
-require_once dirname(__FILE__). '/Bootstrap.class.php' ;
+require_once dirname(__FILE__) . '/Bootstrap.class.php';
 
-use member¥master¥initMaster;
-use member¥Bootstrap;
+use member\master\initMaster;
+use member\Bootstrap;
 
 //テンプレート指定
-$loader = new ¥Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
-$twig =  new ¥Twig_Environment($loader, [
+$loader = new \Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
+$twig =  new \Twig_Environment($loader, [
          'cache' => Bootstrap ::CACHE_DIR
 ]);
 

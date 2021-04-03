@@ -1,8 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥lib¥Cart.class.php
-*ファイル名 : Cart.class.php
-*/
+
 namespace shopping\lib;
 
 class Cart

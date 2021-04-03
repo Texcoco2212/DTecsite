@@ -6,4 +6,3 @@ $(function(){
       location.href = entry_url + "cart.php?item_id=" + item_id;
   });
 });
-//クリック先へ遷移するためのJavaScriptページ

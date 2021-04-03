@@ -1,21 +1,16 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥member¥confirm.php
-*ファイル名 : confirm.php
-*アクセスURL : http://localhost/DT/member/confirm.php
-*/
 
 namespace member;
 
 require_once dirname(__FILE__) . ' /Bootstrap.class.php';
 
-use member¥master¥initMaster;
-use member¥lib¥Database;
-use member¥lib¥Common;
+use member\master\initMaster;
+use member\lib\Database;
+use member\lib\Common;
 
 //テンプレート指定
-$loader = new¥Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
-$twig =  new ¥Twig_Environment($loader, [
+$loader = new\Twig_Loader_Filesystem(Bootstrap::TEMPLATE_DIR);
+$twig =  new \Twig_Environment($loader, [
          'cache' => Bootstrap ::CACHE_DIR
 ]);
 
@@ -106,7 +101,7 @@ switch ($mode) {
                           //登録成功時はは完成ページへ
                           header('Location: ' . Bootstrap::ENTRY_URL . 'complete.php') ;
                           exit();
-                        }else{
+                        } else {
                           //登録失敗時は登録画面に戻る
                           $template = 'regist.html.twig' ;
 

@@ -1,10 +1,5 @@
 <?php
-/*
-*ファイルパス :  C:¥xampp¥htdocs¥DT¥shopping¥lib¥Session.class.php
-*ファイル名 : Session.class.php(セッション関係のクラスファイル、Model)
-*セッション:サーバー側に一時的にデータを保存する仕組みのこと
-*基本的に、keyで判断をして、IDを取るというのが流れ
-*/
+
 namespace shopping\lib;
 
 class Session 
